@@ -1,5 +1,6 @@
 body{
-  background-color: pink;
+  background: url('./img/flower.png') repeat pink;
+  background-size: 100px;
 }
 div#wrap{
   width: 650px;
