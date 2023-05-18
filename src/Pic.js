@@ -22,9 +22,9 @@ const picNumber = {
     bPic : [Bpic01, Bpic02, Bpic03, Bpic04, Bpic05, Bpic06, Bpic07, Bpic08, Bpic09]
 };
 
-export default function Pic({num = 0}){
-    const src = picNumber['aPic'][num];
-    const alt = `${num + 1} 이미지`;
+export default function Pic({num = 1, team}){
+    const src = picNumber[team][num-1];
+    const alt = `${num} 이미지`;
     return(
         <div>
             <img src={src} alt = {alt} />

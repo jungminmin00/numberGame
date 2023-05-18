@@ -1,23 +1,21 @@
 import Pic from './Pic.js';
-import { useState } from 'react';
 
-export default function Border({children, num}){
-    const [sum, setSum] = useState(0);
-    const [histroy, setHistory] = useState('start - ');
-    function sumFunc(){
-        return sum + num
-    }
+export default function Border({children, num, team}){
+    const sum = num.reduce((hap,a) => hap+a, 0);
+    const number = num[num.length -1];
     return(
         <div>
             <h1>{children}</h1>
             <figure>
-                <Pic/>
+                <Pic team = {team}
+                    num = {number}
+                />
                 <figcaption>
                     <dl>
                         <dt>합</dt>
-                        <dd>{sumFunc()}</dd>
+                        <dd>{sum}</dd>
                         <dt>기록</dt>
-                        <dd>{histroy}</dd>
+                        <dd><p>{num.join(' / ')}</p></dd>
                     </dl>
                 </figcaption>
             </figure>
